@@ -5,6 +5,8 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg1 from "../assets/img/project-img1.png";
 import realestatespain from "../assets/img/RealEstateSpain.png";
 import azonic from "../assets/img/Azonic.png";
+import property from "../assets/img/property.png";
+import almumtaz from "../assets/img/almumtaz.png";
 import bizmik from "../assets/img/Bizmik.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";

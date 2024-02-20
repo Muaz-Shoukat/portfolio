@@ -12,6 +12,18 @@ import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projects = [
+     {
+      title: "Al-Mumtaz",
+      description: "Full Stack Ecommerce App",
+      imgUrl: almumtaz,
+      url: "https://almumtaz.com.pk/#/",
+    },
+    {
+      title: "Property Management System (PMS)",
+      description: "Property Management Dashboard",
+      imgUrl: property,
+      url: "http://89.116.24.176/pms/dist/#/dashboard",
+    },
     {
       title: "Azonic",
       description: "Full Stack Ecommerce App",

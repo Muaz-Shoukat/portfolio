@@ -58,7 +58,7 @@ export const Banner = () => {
                     <span className="wrap">{text}</span>
                   </h1>
                   <p>
-                    As a Full Stack Web Engineer with over 4 years of
+                    As a Full Stack Web Engineer with over 2+ years of
                     experience, I have gained a deep understanding of various
                     programming languages, frameworks and technologies required
                     to develop highly scalable and robust web applications. My

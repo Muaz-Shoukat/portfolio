@@ -58,7 +58,7 @@ export const Skills = () => {
                     >
                       <div className="item">
                         <img src={meter1} alt="image" />
-                        <h5>Full stack web development</h5>
+                        <h5>Python (django/flask)</h5>
                       </div>
                       <div className="item">
                         <img src={meter1} alt="image" />
@@ -66,11 +66,11 @@ export const Skills = () => {
                       </div>
                       <div className="item">
                         <img src={meter3} alt="image" />
-                        <h5>React Native</h5>
+                        <h5>Data Scraping (python)</h5>
                       </div>
                       <div className="item">
                         <img src={meter1} alt="image" />
-                        <h5>Data Structures & Algorithms</h5>
+                        <h5>MERN</h5>
                       </div>
                       <div className="item">
                         <img src={meter2} alt="image" />

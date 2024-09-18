@@ -21,6 +21,12 @@ export const Projects = () => {
       url: "https://almumtaz.com.pk/#/",
     },
     {
+      title: "FozenFlakes",
+      description: "Icecream Store",
+      url: "https://frozenflakes.com/",
+      imgUrl: frozenflakes,
+    },
+    {
       title: "Property Management System (PMS)",
       description: "Property Management Dashboard",
       imgUrl: property,

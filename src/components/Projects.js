@@ -8,6 +8,7 @@ import azonic from "../assets/img/Azonic.png";
 import property from "../assets/img/property.png";
 import almumtaz from "../assets/img/almumtaz.png";
 import bizmik from "../assets/img/Bizmik.png";
+import frozenflakes from "../assets/img/frozenflakes.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";

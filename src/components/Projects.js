@@ -15,6 +15,13 @@ import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projects = [
+    
+    {
+      title: "OhmConnect",
+      description: "Energy saving platform",
+      imgUrl: ohmconnect,
+      url: "https://www.ohmconnect.com/",
+    },
      {
       title: "Al-Mumtaz",
       description: "Full Stack Ecommerce App",
@@ -26,12 +33,6 @@ export const Projects = () => {
       description: "Icecream Store",
       url: "https://frozenflakes.com/",
       imgUrl: frozenflakes,
-    },
-    {
-      title: "OhmConnect",
-      description: "Energy saving platform",
-      imgUrl: ohmconnect,
-      url: "https://www.ohmconnect.com/",
     },
     {
       title: "Azonic",

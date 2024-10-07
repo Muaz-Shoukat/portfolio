@@ -5,7 +5,7 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg1 from "../assets/img/project-img1.png";
 import realestatespain from "../assets/img/RealEstateSpain.png";
 import azonic from "../assets/img/Azonic.png";
-import property from "../assets/img/property.png";
+import ohmconnect from "../assets/img/ohmconnect.png";
 import almumtaz from "../assets/img/almumtaz.png";
 import bizmik from "../assets/img/Bizmik.png";
 import frozenflakes from "../assets/img/frozenflakes.png";
@@ -28,10 +28,10 @@ export const Projects = () => {
       imgUrl: frozenflakes,
     },
     {
-      title: "Property Management System (PMS)",
-      description: "Property Management Dashboard",
-      imgUrl: property,
-      url: "http://89.116.24.176/pms/dist/#/dashboard",
+      title: "OhmConnect",
+      description: "Energy saving platform",
+      imgUrl: ohmconnect,
+      url: "https://www.ohmconnect.com/",
     },
     {
       title: "Azonic",

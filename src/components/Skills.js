@@ -69,12 +69,12 @@ export const Skills = () => {
                         <h5>Data Scraping (python)</h5>
                       </div>
                       <div className="item">
-                        <img src={meter1} alt="image" />
-                        <h5>MERN</h5>
+                        <img src={meter2} alt="image" />
+                        <h5>Vue.js</h5>
                       </div>
                       <div className="item">
-                        <img src={meter2} alt="image" />
-                        <h5>SQL/NOSQL</h5>
+                        <img src={meter1} alt="image" />
+                        <h5>MERN</h5>
                       </div>
                     </Carousel>
                   </div>

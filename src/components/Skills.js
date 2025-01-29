@@ -45,7 +45,7 @@ export const Skills = () => {
                   <div className="skill-bx">
                     <h2>Skills</h2>
                     <p>
-                      I am a mobile and web app developer having 4+ years of
+                      I am a web app developer having 2+ years of
                       professional experience. My expertise lies in creating
                       user-friendly, responsive and efficient applications using
                       cutting-edge technology. I am confident in my ability to

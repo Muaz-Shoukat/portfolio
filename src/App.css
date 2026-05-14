@@ -28,14 +28,15 @@
 }
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;background:var(--base);}
 body{
   font-family:Centra,-apple-system,sans-serif;
-  background:var(--base);
+  background:var(--base) !important;
   color:var(--text);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
+#root,.App{background:var(--base);min-height:100vh;}
 h1,h2,h3,h4{line-height:1.1;font-family:Centra,sans-serif;}
 a{text-decoration:none;color:inherit;}
 a:hover{text-decoration:none;}
@@ -300,7 +301,7 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 
 /* ── MARQUEE ── */
 .marquee-strip{
-  background:rgba(10,10,15,.95);
+  background:var(--base);
   border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
   overflow:hidden;padding:18px 0;position:relative;
 }
@@ -311,7 +312,7 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 @keyframes marqueeRoll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ── ABOUT (Engineer Section) ── */
-.about{position:relative;min-height:100vh;padding:120px 0;}
+.about{position:relative;min-height:100vh;padding:120px 0;background:var(--base);}
 
 .eng-cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
 
@@ -369,7 +370,7 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 .stat-small{display:block;font-size:12px;color:var(--text-2);margin-top:6px;letter-spacing:.3px;}
 
 /* ── SKILLS ── */
-.skill{position:relative;min-height:100vh;padding:120px 0;}
+.skill{position:relative;min-height:100vh;padding:120px 0;background:var(--base);}
 .skills-grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .skill-card-new{
   position:relative;padding:32px;border-radius:24px;
@@ -392,7 +393,7 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 .skill-bar-fill{height:100%;border-radius:4px;position:absolute;top:0;left:0;}
 
 /* ── PROJECTS ── */
-.project{position:relative;padding:120px 0;}
+.project{position:relative;padding:120px 0;background:var(--base);}
 
 /* Featured alternating */
 .featured-projects{display:flex;flex-direction:column;gap:100px;margin-bottom:80px;}
@@ -485,7 +486,7 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 .mini-proj-link:hover{gap:10px;color:var(--cyan);}
 
 /* ── CONTACT (Final Section) ── */
-.contact{position:relative;min-height:100vh;padding:120px 0;display:flex;align-items:center;}
+.contact{position:relative;min-height:100vh;padding:120px 0;display:flex;align-items:center;background:var(--base);}
 .contact-inner{text-align:center;position:relative;z-index:10;width:100%;}
 .contact-heading{
   font-size:clamp(3rem,7vw,6rem);font-weight:700;
@@ -533,7 +534,7 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 .contact-social-btn:hover svg{color:#fff;}
 
 /* ── FOOTER ── */
-.footer{background:var(--base);border-top:1px solid var(--bdr);padding:32px 0;}
+.footer{background:var(--base) !important;border-top:1px solid var(--bdr);padding:32px 0;}
 .footer-inner{
   max-width:1200px;margin:0 auto;padding:0 32px;
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
@@ -575,8 +576,6 @@ p.danger{color:#f43f5e;font-size:14px;margin-top:8px;}
 
   /* Push all sections below the mobile header */
   .banner{padding-top:60px;}
-  .about,.skill,.project,.contact{padding-top:100px;padding-bottom:80px;}
-  .marquee-strip{margin-top:60px;}
 
   /* Hero */
   .hero-stats,.hero-avail{display:none;}

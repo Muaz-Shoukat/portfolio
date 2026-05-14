@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 import { Loader }      from "./components/Loader";
 import { FloatNav }    from "./components/FloatNav";

@@ -1,43 +1,37 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { MailchimpForm } from "./MailchimpForm";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import { motion } from "framer-motion";
+import { Container } from "react-bootstrap";
 import logo from "../assets/img/Muaz.png";
-export const Footer = () => {
-  return (
-    <footer className="footer">
-      <Container>
-        <Row className="align-items-center">
-          <MailchimpForm />
-          <Col size={12} sm={6}>
-            <img src={logo} alt="Logo" />
-          </Col>
-          <Col size={12} sm={6} className="text-center text-sm-end">
-            <div className="social-icon">
-              <a
-                href="https://www.linkedin.com/in/muaz-shoukat-08197a265"
-                // target="_blank"
-              >
-                <img src={navIcon1} alt="Icon-linkedin" />
-              </a>
-              <a
-                href="https://www.instagram.com/muaz__shoukat/"
-                // target="_blank"
-              >
-                <i className="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="https://github.com/Muaz-Shoukat/"
-                // target="_blank"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-            </div>
-            <p>Copyright 2022. All Rights Reserved</p>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
-  );
-};
+
+export const Footer = () => (
+  <footer className="footer">
+    <Container>
+      <div className="footer-inner">
+        <a href="#home">
+          <img src={logo} alt="Muaz" className="footer-logo" />
+        </a>
+
+        <div style={{ textAlign:"center" }}>
+          <p className="footer-copy">
+            &copy; {new Date().getFullYear()} <span className="highlight">Muaz Shoukat</span>. Crafted with passion.
+          </p>
+          <motion.p className="footer-bottom-mono"
+            animate={{ opacity:[.5,1,.5] }} transition={{ duration:3,repeat:Infinity,ease:"easeInOut" }}>
+            {"<"} Building the impossible, one line at a time {"/>"}
+          </motion.p>
+        </div>
+
+        <div className="footer-socials">
+          <a href="https://www.linkedin.com/in/muaz-shoukat-08197a265" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <i className="fa-brands fa-linkedin" />
+          </a>
+          <a href="https://github.com/Muaz-Shoukat/" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <i className="fa-brands fa-github" />
+          </a>
+          <a href="https://www.instagram.com/muaz__shoukat/" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <i className="fa-brands fa-instagram" />
+          </a>
+        </div>
+      </div>
+    </Container>
+  </footer>
+);

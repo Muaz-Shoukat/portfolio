@@ -1,20 +1,36 @@
-import './App.css';
-import { NavBar } from './components/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Banner } from './components/Banner';
-import { Skills } from './components/Skills.js';
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
+import { useState } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { Loader }      from "./components/Loader";
+import { FloatNav }    from "./components/FloatNav";
+import { Banner }      from "./components/Banner";
+import { TechMarquee } from "./components/TechMarquee";
+import { About }       from "./components/About";
+import { Skills }      from "./components/Skills";
+import { Projects }    from "./components/Projects";
+import { Contact }     from "./components/Contact";
+import { Footer }      from "./components/Footer";
+
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <div className="App">
-     <NavBar />
-     <Banner />
-     <Skills />
-     <Projects />
-     <Contact />
-     <Footer />
+      {loading && <Loader onDone={() => setLoading(false)} />}
+
+      {!loading && (
+        <>
+          <FloatNav />
+          <Banner />
+          <TechMarquee />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

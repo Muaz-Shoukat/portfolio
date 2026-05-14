@@ -79,15 +79,15 @@ export const Banner = () => {
     <section className="banner" id="home" ref={ref} style={{ minHeight:"100svh" }}>
       {/* Animated background orbs */}
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, #0a0a0f, #1a0b2e, #0a0a0f)", overflow: "hidden" }}>
-        <motion.div animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
+        <motion.div animate={{ scale: [1, 1.2, 1], y: [0, -30, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          style={{ position: "absolute", top: "25%", left: "20%", width: 380, height: 380, background: "#4d2db7", borderRadius: "50%", filter: "blur(120px)", opacity: 0.28 }} />
-        <motion.div animate={{ scale: [1, 1.3, 1], x: [0, -40, 0], y: [0, 40, 0] }}
+          style={{ position: "absolute", top: "25%", left: "15%", width: 320, height: 320, background: "#4d2db7", borderRadius: "50%", filter: "blur(120px)", opacity: 0.28 }} />
+        <motion.div animate={{ scale: [1, 1.3, 1], y: [0, 40, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          style={{ position: "absolute", bottom: "25%", right: "28%", width: 320, height: 320, background: "#d946ef", borderRadius: "50%", filter: "blur(100px)", opacity: 0.18 }} />
-        <motion.div animate={{ scale: [1, 1.1, 1], x: [0, 30, 0], y: [0, -50, 0] }}
+          style={{ position: "absolute", bottom: "25%", right: "15%", width: 260, height: 260, background: "#d946ef", borderRadius: "50%", filter: "blur(100px)", opacity: 0.18 }} />
+        <motion.div animate={{ scale: [1, 1.1, 1], y: [0, -50, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          style={{ position: "absolute", top: "50%", right: "22%", width: 280, height: 280, background: "#00f5ff", borderRadius: "50%", filter: "blur(90px)", opacity: 0.2 }} />
+          style={{ position: "absolute", top: "50%", right: "20%", width: 240, height: 240, background: "#00f5ff", borderRadius: "50%", filter: "blur(90px)", opacity: 0.2 }} />
 
         {/* Grid overlay */}
         <div style={{

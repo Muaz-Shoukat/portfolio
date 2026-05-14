@@ -76,7 +76,7 @@ export const Banner = () => {
   };
 
   return (
-    <section className="banner" id="home" ref={ref}>
+    <section className="banner" id="home" ref={ref} style={{ minHeight:"100svh" }}>
       {/* Animated background orbs */}
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, #0a0a0f, #1a0b2e, #0a0a0f)", overflow: "hidden" }}>
         <motion.div animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}

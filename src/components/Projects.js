@@ -81,22 +81,19 @@ export const Projects = () => {
           <div className="featured-projects">
             {FEATURED.map((p, i) => (
               <motion.div key={p.title}
-                className="feat-proj"
-                style={{ direction: i % 2 === 1 ? "rtl" : "ltr" }}
-                initial={{ opacity:0,y:100 }}
+                className={`feat-proj${i % 2 === 1 ? " feat-proj-reverse" : ""}`}
+                initial={{ opacity:0,y:80 }}
                 whileInView={{ opacity:1,y:0 }}
-                transition={{ duration:0.8,delay:0.2 }}
-                viewport={{ once:true }}>
+                transition={{ duration:0.8,delay:0.15 }}
+                viewport={{ once:true, amount:0.1 }}>
 
                 {/* Image side */}
-                <motion.div className="feat-proj-img-wrap" style={{ direction:"ltr" }}
+                <motion.div className="feat-proj-img-wrap"
                   whileHover={{ scale:1.02 }} transition={{ duration:0.3 }}>
-                  {/* corner glow */}
                   <motion.div className="feat-proj-corner"
                     style={{ background:p.gradient }}
                     animate={{ scale:[1,1.2,1],opacity:[.5,.8,.5] }}
                     transition={{ duration:3,repeat:Infinity,ease:"easeInOut" }} />
-
                   <div className="feat-proj-img-inner">
                     <motion.img src={p.img} alt={p.title}
                       whileHover={{ scale:1.08 }} transition={{ duration:0.6 }} />
@@ -114,18 +111,18 @@ export const Projects = () => {
                 </motion.div>
 
                 {/* Content side */}
-                <motion.div style={{ direction:"ltr" }}
-                  initial={{ opacity:0,x:i%2===0?-50:50 }}
-                  whileInView={{ opacity:1,x:0 }}
-                  transition={{ duration:0.8,delay:0.3 }}
-                  viewport={{ once:true }}>
+                <motion.div className="feat-proj-content-col"
+                  initial={{ opacity:0, x: i%2===0 ? -40 : 40 }}
+                  whileInView={{ opacity:1, x:0 }}
+                  transition={{ duration:0.8,delay:0.25 }}
+                  viewport={{ once:true, amount:0.1 }}>
                   <div className="feat-proj-cat-badge" style={{ background:p.gradient }}>{p.category}</div>
-                  <h3 className="feat-proj-content">{p.title}</h3>
-                  <p style={{ fontSize:16,color:"var(--text-2)",lineHeight:1.8,marginBottom:28 }}>{p.desc}</p>
+                  <h3 className="feat-proj-title">{p.title}</h3>
+                  <p className="feat-proj-desc">{p.desc}</p>
                   <div className="feat-proj-btns">
                     <motion.a href={p.url} target="_blank" rel="noopener noreferrer"
                       whileHover={{ scale:1.05,y:-2 }} whileTap={{ scale:.97 }}
-                      style={{ background:p.gradient,boxShadow:`0 0 20px ${p.glow}40`,padding:"12px 28px",fontSize:14,fontWeight:700,borderRadius:100,color:"#fff",display:"inline-flex",alignItems:"center",gap:8 }}>
+                      style={{ background:p.gradient,boxShadow:`0 0 20px ${p.glow}40`,padding:"12px 28px",fontSize:14,fontWeight:700,borderRadius:100,color:"#fff",display:"inline-flex",alignItems:"center",gap:8,textDecoration:"none" }}>
                       <ExternalLink style={{ width:16,height:16 }} />
                       View Project
                     </motion.a>

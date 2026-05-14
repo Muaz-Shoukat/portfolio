@@ -55,12 +55,12 @@ export const Contact = () => {
 
       {/* Background epic orbs */}
       <div style={{ position:"absolute",inset:0,overflow:"hidden",pointerEvents:"none" }}>
-        <motion.div animate={{ scale:[1,1.3,1],x:[0,100,0],y:[0,-50,0] }}
+        <motion.div animate={{ scale:[1,1.3,1],y:[0,-50,0] }}
           transition={{ duration:10,repeat:Infinity,ease:"easeInOut" }}
-          style={{ position:"absolute",top:"25%",left:"20%",width:500,height:500,background:"#00f5ff",borderRadius:"50%",filter:"blur(200px)",opacity:.14 }} />
-        <motion.div animate={{ scale:[1,1.4,1],x:[0,-80,0],y:[0,60,0] }}
+          style={{ position:"absolute",top:"25%",left:"10%",width:400,height:400,background:"#00f5ff",borderRadius:"50%",filter:"blur(180px)",opacity:.14 }} />
+        <motion.div animate={{ scale:[1,1.4,1],y:[0,60,0] }}
           transition={{ duration:12,repeat:Infinity,ease:"easeInOut" }}
-          style={{ position:"absolute",bottom:"20%",right:"20%",width:600,height:600,background:"#d946ef",borderRadius:"50%",filter:"blur(200px)",opacity:.1 }} />
+          style={{ position:"absolute",bottom:"20%",right:"10%",width:400,height:400,background:"#d946ef",borderRadius:"50%",filter:"blur(180px)",opacity:.1 }} />
         <motion.div animate={{ scale:[1,1.2,1],rotate:[0,180,360] }}
           transition={{ duration:15,repeat:Infinity,ease:"linear" }}
           style={{ position:"absolute",top:"50%",left:"50%",width:400,height:400,background:"#4d2db7",borderRadius:"50%",filter:"blur(150px)",opacity:.18,transform:"translate(-50%,-50%)" }} />

@@ -21,7 +21,7 @@ export const Footer = () => (
         </div>
 
         <div className="footer-socials">
-          <a href="https://www.linkedin.com/in/muaz-shoukat-08197a265" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/muaz-shoukat" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <i className="fa-brands fa-linkedin" />
           </a>
           <a href="https://github.com/Muaz-Shoukat/" target="_blank" rel="noopener noreferrer" title="GitHub">

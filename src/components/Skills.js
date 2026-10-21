@@ -1,56 +1,40 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "react-bootstrap";
-import { Cpu, Code, Database, Cloud, Network, Sparkles } from "lucide-react";
+import { Cpu, Code, Database, ShieldCheck, Network, Sparkles } from "lucide-react";
 
 const SKILLS = [
   {
     icon: Cpu,
-    category: "AI & Machine Learning",
+    category: "AI & LLM Engineering",
     gradient: "linear-gradient(135deg,#00f5ff,#4d2db7)",
     glow: "#00f5ff",
-    techs: [
-      { name:"Python & LangChain", pct:93 },
-      { name:"OpenAI / LLM Integration", pct:90 },
-      { name:"AI Automation & Agents", pct:88 },
-      { name:"Data Scraping & NLP", pct:85 },
-    ],
-  },
-  {
-    icon: Code,
-    category: "Frontend Development",
-    gradient: "linear-gradient(135deg,#d946ef,#4d2db7)",
-    glow: "#d946ef",
-    techs: [
-      { name:"React & Next.js", pct:95 },
-      { name:"TypeScript", pct:88 },
-      { name:"Vue.js", pct:82 },
-      { name:"CSS / Tailwind / Bootstrap", pct:92 },
-    ],
+    techs: ["LLM integrations (OpenAI, Claude)", "RAG & vector databases", "AI agents & MCP", "LangChain / LangGraph", "Prompt engineering", "Claude Code workflows"],
+    proof: "AI prospecting platform · AI-assisted engineering at KeyShare",
   },
   {
     icon: Database,
-    category: "Backend & APIs",
+    category: "Backend & Cloud",
     gradient: "linear-gradient(135deg,#4d2db7,#00f5ff)",
     glow: "#4d2db7",
-    techs: [
-      { name:"Node.js & Express", pct:92 },
-      { name:"Django / FastAPI / Flask", pct:90 },
-      { name:"REST APIs & GraphQL", pct:88 },
-      { name:"PostgreSQL & MongoDB", pct:85 },
-    ],
+    techs: ["Python", "FastAPI", "Flask", "Django / DRF", "AWS Lambda & serverless", "REST & GraphQL", "PostgreSQL", "Supabase", "Docker & CI/CD"],
+    proof: "Production services at KeyShare and OhmConnect",
   },
   {
-    icon: Cloud,
-    category: "Cloud & DevOps",
+    icon: ShieldCheck,
+    category: "Identity, Auth & Payments",
     gradient: "linear-gradient(135deg,#00f5ff,#d946ef)",
     glow: "#00f5ff",
-    techs: [
-      { name:"AWS & Azure", pct:82 },
-      { name:"Docker & CI/CD", pct:85 },
-      { name:"MongoDB & Redis", pct:87 },
-      { name:"Web3 & Blockchain", pct:78 },
-    ],
+    techs: ["Passkeys / FIDO", "Apple Wallet", "Google Wallet", "NFC credentials", "Amazon Cognito", "OAuth & JWT", "Stripe"],
+    proof: "Wallet room keys and digital IDs at KeyShare",
+  },
+  {
+    icon: Code,
+    category: "Frontend",
+    gradient: "linear-gradient(135deg,#d946ef,#4d2db7)",
+    glow: "#d946ef",
+    techs: ["React", "Next.js", "TypeScript", "Node.js", "Vue.js", "React Native", "Tailwind CSS"],
+    proof: "DJPOOL, e-commerce platforms and admin dashboards",
   },
 ];
 
@@ -101,11 +85,11 @@ export const Skills = () => {
             <h2 className="section-heading" style={{ marginBottom:16 }}>
               <span className="gt-1">Powers &amp; Capabilities</span>
             </h2>
-            <p className="section-sub">An interconnected universe of technologies working in harmony.</p>
+            <p className="section-sub">What I use in production, and where I've used it.</p>
           </motion.div>
 
           <div className="skills-grid-2col">
-            {SKILLS.map(({ icon: Icon, category, gradient, glow, techs }, i) => (
+            {SKILLS.map(({ icon: Icon, category, gradient, glow, techs, proof }, i) => (
               <motion.div key={category}
                 className="skill-card-new"
                 initial={{ opacity:0,y:50 }}
@@ -135,27 +119,19 @@ export const Skills = () => {
                 </div>
                 <h3>{category}</h3>
 
-                <div>
-                  {techs.map(({ name, pct }, j) => (
-                    <div key={name} className="skill-item">
-                      <div className="skill-item-top">
-                        <span className="skill-item-name">{name}</span>
-                        <span className="skill-item-pct">{pct}%</span>
-                      </div>
-                      <div className="skill-bar-track">
-                        <motion.div className="skill-bar-fill"
-                          style={{ background:`linear-gradient(to right,${gradient.includes("00f5ff,#4d2db7") ? "#00f5ff,#4d2db7" : gradient.includes("d946ef") ? "#d946ef,#4d2db7" : "#4d2db7,#00f5ff"})` }}
-                          initial={{ width:0 }}
-                          whileInView={{ width:`${pct}%` }}
-                          transition={{ duration:1.5,delay:i*.1+j*.1,ease:"easeOut" }}
-                          viewport={{ once:true }} />
-                        <motion.div style={{ position:"absolute",inset:0,width:`${pct}%`,borderRadius:4,boxShadow:`0 0 10px ${glow}80` }}
-                          animate={{ opacity:[.4,1,.4] }}
-                          transition={{ duration:2,repeat:Infinity,ease:"easeInOut",delay:j*.2 }} />
-                      </div>
-                    </div>
+                <div className="skill-chips">
+                  {techs.map((name, j) => (
+                    <motion.span key={name} className="skill-chip"
+                      style={{ borderColor:`${glow}55` }}
+                      initial={{ opacity:0,y:10 }}
+                      whileInView={{ opacity:1,y:0 }}
+                      transition={{ duration:0.4,delay:i*.1+j*.05 }}
+                      viewport={{ once:true }}>
+                      {name}
+                    </motion.span>
                   ))}
                 </div>
+                <p className="skill-proof">{proof}</p>
 
                 {/* rotating bg icon */}
                 <motion.div style={{ position:"absolute",top:-8,right:-8,opacity:.08 }}

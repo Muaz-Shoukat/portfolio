@@ -44,8 +44,8 @@ export const Contact = () => {
   };
 
   const SOCIALS = [
-    { icon:Mail,         label:"Email",    href:"mailto:muazshoukat35@gmail.com", color:"#00f5ff" },
-    { icon:LinkedinIcon, label:"LinkedIn", href:"https://www.linkedin.com/in/muaz-shoukat-08197a265", color:"#d946ef" },
+    { icon:Mail,         label:"Email",    href:"mailto:muazdev01@gmail.com", color:"#00f5ff" },
+    { icon:LinkedinIcon, label:"LinkedIn", href:"https://www.linkedin.com/in/muaz-shoukat", color:"#d946ef" },
     { icon:GithubIcon,   label:"GitHub",   href:"https://github.com/Muaz-Shoukat/", color:"#4d2db7" },
   ];
 

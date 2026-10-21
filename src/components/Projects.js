@@ -2,57 +2,57 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "react-bootstrap";
 import { ExternalLink, Sparkles } from "lucide-react";
+import keyshare     from "../assets/img/keyshare.png";
 import ohmconnect   from "../assets/img/ohmconnect.png";
+import djpool       from "../assets/img/djpool.png";
 import almumtaz     from "../assets/img/almumtaz.png";
 import azonic       from "../assets/img/Azonic.png";
 import realestate   from "../assets/img/RealEstateSpain.png";
-import frozenflakes from "../assets/img/frozenflakes.png";
 import projImg2     from "../assets/img/project-img2.png";
 import bizmik       from "../assets/img/Bizmik.png";
 import shopBay      from "../assets/img/shopBay.png";
-import projImg1     from "../assets/img/project-img1.png";
 
 
 const FEATURED = [
   {
-    title: "OhmConnect",
-    category: "AI-Powered Platform",
-    desc: "Energy-saving platform connecting households to the smart grid. Intelligent load-balancing with real-time AI recommendations that rewards users for smarter consumption.",
-    img: ohmconnect,
-    url: "https://www.ohmconnect.com/",
-    tech: ["React","Python","REST API","Real-time Data"],
+    title: "KeyShare",
+    category: "Digital Identity · AWS Serverless",
+    desc: "NFC identity platform that delivers hotel room keys, building passes and digital IDs straight to a phone's native wallet with a single tap, with no app download. I build its serverless Python services on AWS Lambda, Apple and Google Wallet key provisioning, and passkey/FIDO authentication.",
+    img: keyshare,
+    url: "https://www.keyshare.id/",
+    tech: ["Python","AWS Lambda","FastAPI","Apple & Google Wallet"],
     gradient: "linear-gradient(135deg,#00f5ff,#4d2db7)",
     glow: "#00f5ff",
   },
   {
-    title: "Al-Mumtaz",
-    category: "Full-Stack E-Commerce",
-    desc: "Complete e-commerce solution for a Pakistani retail brand — product management, cart, secure checkout, admin dashboard, and order tracking with custom authentication.",
-    img: almumtaz,
-    url: "https://almumtaz.com.pk/#/",
-    tech: ["Vue.js","Node.js","MongoDB","Stripe"],
+    title: "OhmConnect",
+    category: "Energy & IoT Platform",
+    desc: "US energy platform that pays households to cut electricity use at peak times. I built device integrations for Tesla Powerwall, Google Nest, ecobee, Sensi and Wemo, fixed bugs in the core savings and rewards algorithm, and sped up its APIs and database queries.",
+    img: ohmconnect,
+    url: "https://www.ohmconnect.com/",
+    tech: ["Python","Flask","PostgreSQL","IoT Integrations"],
     gradient: "linear-gradient(135deg,#d946ef,#4d2db7)",
     glow: "#d946ef",
   },
   {
-    title: "Real Estate Spain",
-    category: "AI / Web Scraping",
-    desc: "AI-assisted web scraping app aggregating Spanish property listings. Smart deduplication, advanced filters, and CSV export — built with Puppeteer and Python automation.",
-    img: realestate,
-    url: "https://realestatespain.netlify.app/",
-    tech: ["React","Python","Puppeteer","FastAPI"],
+    title: "DJPOOL",
+    category: "Music Streaming",
+    desc: "Music streaming platform for DJs and artists: uploads, adaptive HLS audio streaming, playlists, favorites and paid subscriptions. I built the front end.",
+    img: djpool,
+    url: "https://djpool.club/",
+    tech: ["React","Tailwind CSS","Supabase","Stripe"],
     gradient: "linear-gradient(135deg,#4d2db7,#00f5ff)",
     glow: "#4d2db7",
   },
 ];
 
 const MORE = [
-  { title:"Azonic",      desc:"MERN e-commerce with Stripe & admin dashboard.",    img:azonic,      url:"https://main--azonic-ecommerce.netlify.app/",   cat:"E-Commerce" },
-  { title:"FrozenFlakes",desc:"Ice-cream brand storefront with product catalog.",   img:frozenflakes,url:"https://frozenflakes.com/",                      cat:"Frontend"   },
-  { title:"ItisMakeup",  desc:"Beauty e-commerce with custom product configurator.",img:projImg2,   url:"https://itismakeup.com/",                         cat:"Full Stack" },
+  { title:"Real Estate Spain", desc:"Property-listing aggregator that scrapes Idealista and Pisos, with filters and owner contact details.", img:realestate, url:"https://realestatespain.netlify.app/", cat:"Data Extraction" },
+  { title:"Al-Mumtaz",   desc:"E-commerce store for an electronics retailer: catalog, checkout and admin dashboard.", img:almumtaz, url:"https://almumtaz.com.pk/#/", cat:"E-Commerce" },
   { title:"Bizmik",      desc:"Multi-vendor platform with role-based access.",      img:bizmik,      url:"https://bizmik.netlify.app/",                     cat:"E-Commerce" },
+  { title:"Azonic",      desc:"MERN e-commerce with Stripe & admin dashboard.",    img:azonic,      url:"https://main--azonic-ecommerce.netlify.app/",   cat:"E-Commerce" },
+  { title:"ItisMakeup",  desc:"Beauty e-commerce with custom product configurator.",img:projImg2,   url:"https://itismakeup.com/",                         cat:"Full Stack" },
   { title:"shopBay",     desc:"React Native cross-platform shopping mobile app.",   img:shopBay,     url:"https://github.com/Muaz-Shoukat/shopBay-MobileApp",cat:"Mobile"    },
-  { title:"OmniFoods",   desc:"Responsive food-delivery landing page.",             img:projImg1,    url:"https://omnifood.dev/",                           cat:"Frontend"   },
 ];
 
 export const Projects = () => {

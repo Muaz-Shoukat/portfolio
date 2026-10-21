@@ -142,8 +142,8 @@ export const About = () => (
         {[
           { big:"4+",   small:"Years of experience" },
           { big:"10+",  small:"Projects shipped" },
-          { big:"100%", small:"Client satisfaction" },
-          { big:"5+",   small:"Tech stacks mastered" },
+          { big:"1,400+", small:"Hours with US teams" },
+          { big:"100%", small:"Upwork Job Success" },
         ].map(({ big, small }, i) => (
           <motion.div
             key={small}

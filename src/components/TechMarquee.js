@@ -12,7 +12,7 @@ const ITEMS = [
   { label:"TYPESCRIPT", hi:true  },
   { label:"MONGODB",    hi:false },
   { label:"FASTAPI",    hi:true  },
-  { label:"WEB3",       hi:false },
+  { label:"MCP",        hi:false },
   { label:"OPENAI API", hi:true  },
 ];
 

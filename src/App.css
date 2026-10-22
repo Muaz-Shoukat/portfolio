@@ -185,3 +185,15 @@ img{max-width:100%;display:block;}
 .footer-inner a{margin-left:20px;}
 .footer-inner a:first-child{margin-left:0;}
 .footer-inner a:hover{color:var(--text);}
+
+/* Project role, engagement terms, quote link */
+.project-role{font-size:14px;color:var(--text);font-weight:500;margin:-4px 0 10px;}
+.terms{margin-top:24px;display:grid;gap:10px;}
+.terms li{position:relative;padding-left:18px;color:var(--muted);font-size:15px;}
+.terms li::before{content:"";position:absolute;left:2px;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.terms strong{color:var(--text);font-weight:600;margin-right:4px;}
+.quote-link{margin-top:10px;font-size:14px;color:var(--accent);}
+.quote-link:hover{text-decoration:underline;}
+
+/* Code card fits small phones without sideways scrolling */
+@media (max-width:480px){.code-card pre{font-size:11.5px;padding:14px 14px;}.code-out{padding:10px 14px;font-size:11.5px;}}

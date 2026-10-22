@@ -8,7 +8,7 @@ export const Projects = () => (
       <h2 className="section-title">Selected projects</h2>
 
       <div className="projects">
-        {PROJECTS.map(({ title, kind, summary, did, tech, img, url }) => (
+        {PROJECTS.map(({ title, kind, role, when, summary, did, tech, img, url }) => (
           <article key={title} className="project">
             <a href={url} target="_blank" rel="noopener noreferrer" className="project-img" aria-label={`${title} website`}>
               <img src={img} alt={`${title} home page`} loading="lazy" />
@@ -18,6 +18,7 @@ export const Projects = () => (
               <h3>
                 <a href={url} target="_blank" rel="noopener noreferrer">{title} <ArrowUpRight size={18} /></a>
               </h3>
+              <p className="project-role">{role}{when ? ` · ${when}` : ""}</p>
               <p>{summary}</p>
               <p className="project-did">{did}</p>
               <ul className="tags">
@@ -28,7 +29,7 @@ export const Projects = () => (
         ))}
       </div>
 
-      <h3 className="subhead">More work</h3>
+      <h3 className="subhead">Also built</h3>
       <ul className="more-work">
         {MORE_WORK.map(({ title, desc, url }) => (
           <li key={title}>

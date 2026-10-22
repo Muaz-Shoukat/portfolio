@@ -18,16 +18,16 @@ export const SERVICES = [
     tags: ["OpenAI", "Claude", "RAG", "LangChain", "LangGraph", "MCP"],
   },
   {
-    icon: "server",
-    title: "Python backends & APIs",
-    text: "Fast, well-tested services and integrations that your product and partners can rely on.",
-    tags: ["FastAPI", "Flask", "Django", "REST & GraphQL", "AWS", "PostgreSQL"],
-  },
-  {
     icon: "shield",
     title: "Identity, auth & payments",
     text: "Passwordless login, digital wallet credentials and billing that are secure and easy for users.",
     tags: ["Passkeys / FIDO", "Apple Wallet", "Google Wallet", "Cognito", "Stripe"],
+  },
+  {
+    icon: "server",
+    title: "Python backends & APIs",
+    text: "Fast, well-tested services and integrations that your product and partners can rely on.",
+    tags: ["FastAPI", "Flask", "Django", "REST & GraphQL", "AWS", "PostgreSQL"],
   },
   {
     icon: "layout",
@@ -41,6 +41,8 @@ export const PROJECTS = [
   {
     title: "KeyShare",
     kind: "Digital identity platform",
+    role: "Backend & full-stack engineer",
+    when: "2025–26",
     summary: "One NFC tap verifies a person and delivers the right credential to their phone's native wallet: a hotel room key, a building pass or a digital ID, with no app to install.",
     did: "Built backend services for wallet key provisioning, passkey authentication and hotel system integrations.",
     tech: ["Python", "FastAPI", "Flask", "Apple Wallet", "Google Wallet", "Passkeys"],
@@ -50,6 +52,7 @@ export const PROJECTS = [
   {
     title: "Success.ai",
     kind: "AI B2B prospecting platform",
+    role: "Full-stack developer",
     summary: "Lead generation and sales outreach platform that finds, qualifies and contacts the right decision-makers.",
     did: "Built GPT-based lead qualification, personalized outreach messages and retrieval-augmented generation (RAG) over company data.",
     tech: ["Next.js", "Node.js", "OpenAI API", "LangChain", "RAG"],
@@ -59,6 +62,8 @@ export const PROJECTS = [
   {
     title: "OhmConnect",
     kind: "Energy & IoT platform",
+    role: "Backend engineer, via Codefulcrum",
+    when: "2024–25",
     summary: "US energy platform that pays households to cut electricity use during peak demand.",
     did: "Built device connectors for Tesla Powerwall, Google Nest, ecobee, Sensi and Wemo, fixed the core savings and rewards algorithm, and sped up APIs and database queries.",
     tech: ["Python", "Flask", "PostgreSQL", "AWS", "IoT"],
@@ -68,6 +73,7 @@ export const PROJECTS = [
   {
     title: "DJPOOL",
     kind: "Music streaming platform",
+    role: "Front-end developer",
     summary: "Streaming and download platform for DJs and artists, with paid subscriptions.",
     did: "Built the front end: adaptive HLS audio streaming, uploads, playlists and Stripe checkout.",
     tech: ["React", "Tailwind CSS", "Supabase", "Stripe", "Auth0"],
@@ -77,11 +83,8 @@ export const PROJECTS = [
 ];
 
 export const MORE_WORK = [
-  { title: "Real Estate Spain", desc: "Aggregates property listings scraped from Idealista and Pisos.", url: "https://realestatespain.netlify.app/" },
-  { title: "Al-Mumtaz Electronics", desc: "E-commerce store with catalog, checkout and admin dashboard.", url: "https://almumtaz.com.pk/#/" },
-  { title: "Bizmik", desc: "Multi-vendor marketplace with role-based access and Stripe.", url: "https://bizmik.netlify.app/" },
-  { title: "Azonic", desc: "MERN e-commerce store with Stripe and an admin dashboard.", url: "https://main--azonic-ecommerce.netlify.app/" },
-  { title: "shopBay", desc: "Cross-platform shopping app in React Native.", url: "https://github.com/Muaz-Shoukat/shopBay-MobileApp" },
+  { title: "Real Estate Spain", desc: "Python data pipeline that aggregates property listings from Idealista and Pisos.", url: "https://realestatespain.netlify.app/" },
+  { title: "Al-Mumtaz Electronics", desc: "E-commerce store for an electronics retailer: catalog, checkout and admin dashboard.", url: "https://almumtaz.com.pk/#/" },
 ];
 
 export const TESTIMONIALS = [
@@ -89,6 +92,7 @@ export const TESTIMONIALS = [
     quote: "He is a responsible, talented, and honest engineer, that is capable of whatever we ask of him. I'm impressed with Muaz.",
     name: "Derek DeJonghe",
     role: "Founder, Expansive Labs · O'Reilly author",
+    link: "https://www.linkedin.com/in/muaz-shoukat/details/recommendations/",
   },
   {
     quote: "Had a great experience working with Muaz. He's professional and accountable. He successfully completed various technically challenging projects for us.",

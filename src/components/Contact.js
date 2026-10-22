@@ -24,6 +24,11 @@ export const Contact = () => {
           <p className="badge"><span className="pulse" /> Available for new projects and roles</p>
           <h2 className="section-title">Let's build something.</h2>
           <p>Tell me about your product, your team or the role. I usually reply within a day.</p>
+          <ul className="terms">
+            <li><strong>Open to</strong> full-time remote roles, contracts and fixed-price projects</li>
+            <li><strong>Hours</strong> overlap with US mornings and the full European workday</li>
+            <li><strong>Response</strong> usually within a day</li>
+          </ul>
           <ul className="contact-links">
             <li><a href={`mailto:${LINKS.email}`}><Mail size={18} /> {LINKS.email}</a></li>
             <li><a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"><LinkedinIcon /> linkedin.com/in/muaz-shoukat</a></li>

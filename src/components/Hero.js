@@ -36,8 +36,8 @@ export const Hero = () => (
         <p className="badge"><span className="pulse" /> Available for new projects and roles</p>
         <h1>I build <span className="accent">AI products</span> end to end.</h1>
         <p className="hero-lead">
-          Python backends, LLM agents and React front ends, shipped to production
-          for startups and product teams around the world.
+          LLM agents and Python backends, with the secure login, wallet credentials
+          and payments around them. Shipped to production for startups and product teams.
         </p>
 
         <div className="hero-actions">

@@ -12,7 +12,10 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     setButtonText("Sending…");
-    emailjs.sendForm("service_xrsbahp", "template_o63vs8m", form.current, "8Oq_aR7E4IJwuFUGL")
+    // The EmailJS template uses {{name}} in the subject and {{reply_to}} for the Reply-To header.
+    const fields = Object.fromEntries(new FormData(form.current));
+    const params = { ...fields, name: `${fields.firstName} ${fields.lastName}`.trim(), reply_to: fields.email };
+    emailjs.send("service_xrsbahp", "template_o63vs8m", params, "8Oq_aR7E4IJwuFUGL")
       .then(() => { setStatus({ success: true, message: "Thanks, your message is on its way. I'll reply within a day." }); setButtonText("Send message"); e.target.reset(); },
             () => { setStatus({ success: false, message: "Something went wrong. Please email me directly instead." }); setButtonText("Send message"); });
   };

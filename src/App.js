@@ -1,37 +1,31 @@
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import { Loader }      from "./components/Loader";
-import { FloatNav }    from "./components/FloatNav";
-import { Banner }      from "./components/Banner";
-import { TechMarquee } from "./components/TechMarquee";
+import { Nav }         from "./components/Nav";
+import { Hero }        from "./components/Hero";
 import { About }       from "./components/About";
-import { Skills }      from "./components/Skills";
+import { Experience }  from "./components/Experience";
 import { Projects }    from "./components/Projects";
+import { Testimonial } from "./components/Testimonial";
+import { Skills }      from "./components/Skills";
 import { Contact }     from "./components/Contact";
 import { Footer }      from "./components/Footer";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
   return (
-    <div className="App">
-      {loading && <Loader onDone={() => setLoading(false)} />}
-
-      {!loading && (
-        <>
-          <FloatNav />
-          <Banner />
-          <TechMarquee />
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
-          <Footer />
-        </>
-      )}
-    </div>
+    <>
+      <a href="#main" className="skip-link">Skip to content</a>
+      <Nav />
+      <main id="main">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Testimonial />
+        <Skills />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
 

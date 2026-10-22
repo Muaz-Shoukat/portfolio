@@ -1,167 +1,43 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Container } from "react-bootstrap";
-import { ExternalLink, Sparkles } from "lucide-react";
-import keyshare     from "../assets/img/keyshare.png";
-import ohmconnect   from "../assets/img/ohmconnect.png";
-import djpool       from "../assets/img/djpool.png";
-import almumtaz     from "../assets/img/almumtaz.png";
-import azonic       from "../assets/img/Azonic.png";
-import realestate   from "../assets/img/RealEstateSpain.png";
-import projImg2     from "../assets/img/project-img2.png";
-import bizmik       from "../assets/img/Bizmik.png";
-import shopBay      from "../assets/img/shopBay.png";
+import { ArrowUpRight } from "lucide-react";
+import { PROJECTS, MORE_WORK } from "../data";
 
+export const Projects = () => (
+  <section className="section" id="projects">
+    <div className="container">
+      <h2 className="section-title">Selected projects</h2>
 
-const FEATURED = [
-  {
-    title: "KeyShare",
-    category: "Digital Identity · AWS Serverless",
-    desc: "NFC identity platform that delivers hotel room keys, building passes and digital IDs straight to a phone's native wallet with a single tap, with no app download. I build its serverless Python services on AWS Lambda, Apple and Google Wallet key provisioning, and passkey/FIDO authentication.",
-    img: keyshare,
-    url: "https://www.keyshare.id/",
-    tech: ["Python","AWS Lambda","FastAPI","Apple & Google Wallet"],
-    gradient: "linear-gradient(135deg,#00f5ff,#4d2db7)",
-    glow: "#00f5ff",
-  },
-  {
-    title: "OhmConnect",
-    category: "Energy & IoT Platform",
-    desc: "US energy platform that pays households to cut electricity use at peak times. I built device integrations for Tesla Powerwall, Google Nest, ecobee, Sensi and Wemo, fixed bugs in the core savings and rewards algorithm, and sped up its APIs and database queries.",
-    img: ohmconnect,
-    url: "https://www.ohmconnect.com/",
-    tech: ["Python","Flask","PostgreSQL","IoT Integrations"],
-    gradient: "linear-gradient(135deg,#d946ef,#4d2db7)",
-    glow: "#d946ef",
-  },
-  {
-    title: "DJPOOL",
-    category: "Music Streaming",
-    desc: "Music streaming platform for DJs and artists: uploads, adaptive HLS audio streaming, playlists, favorites and paid subscriptions. I built the front end.",
-    img: djpool,
-    url: "https://djpool.club/",
-    tech: ["React","Tailwind CSS","Supabase","Stripe"],
-    gradient: "linear-gradient(135deg,#4d2db7,#00f5ff)",
-    glow: "#4d2db7",
-  },
-];
-
-const MORE = [
-  { title:"Real Estate Spain", desc:"Property-listing aggregator that scrapes Idealista and Pisos, with filters and owner contact details.", img:realestate, url:"https://realestatespain.netlify.app/", cat:"Data Extraction" },
-  { title:"Al-Mumtaz",   desc:"E-commerce store for an electronics retailer: catalog, checkout and admin dashboard.", img:almumtaz, url:"https://almumtaz.com.pk/#/", cat:"E-Commerce" },
-  { title:"Bizmik",      desc:"Multi-vendor platform with role-based access.",      img:bizmik,      url:"https://bizmik.netlify.app/",                     cat:"E-Commerce" },
-  { title:"Azonic",      desc:"MERN e-commerce with Stripe & admin dashboard.",    img:azonic,      url:"https://main--azonic-ecommerce.netlify.app/",   cat:"E-Commerce" },
-  { title:"ItisMakeup",  desc:"Beauty e-commerce with custom product configurator.",img:projImg2,   url:"https://itismakeup.com/",                         cat:"Full Stack" },
-  { title:"shopBay",     desc:"React Native cross-platform shopping mobile app.",   img:shopBay,     url:"https://github.com/Muaz-Shoukat/shopBay-MobileApp",cat:"Mobile"    },
-];
-
-export const Projects = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end","end start"] });
-  const opacity = useTransform(scrollYProgress, [0,.1,.9,1], [0,1,1,0]);
-
-  return (
-    <section className="project" id="project" ref={ref}
-      style={{ background:"linear-gradient(to bottom,#0a0a0f,#1a0b2e,#0a0a0f)" }}>
-      <div style={{ position:"absolute",top:"50%",left:"50%",width:600,height:600,background:"#00f5ff",borderRadius:"50%",filter:"blur(200px)",opacity:.07,transform:"translate(-50%,-50%)",pointerEvents:"none" }} />
-
-      <motion.div style={{ opacity }}>
-        <Container>
-          {/* Header */}
-          <motion.div initial={{ opacity:0,y:50 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.8 }} viewport={{ once:true }} style={{ textAlign:"center",marginBottom:80 }}>
-            <div className="cyber-badge" style={{ justifyContent:"center" }}>
-              <Sparkles style={{ width:14,height:14 }} />
-              FEATURED WORK
+      <div className="projects">
+        {PROJECTS.map(({ title, kind, summary, did, tech, img, url }) => (
+          <article key={title} className="project">
+            <a href={url} target="_blank" rel="noopener noreferrer" className="project-img" aria-label={`${title} website`}>
+              <img src={img} alt={`${title} home page`} loading="lazy" />
+            </a>
+            <div className="project-body">
+              <p className="project-kind">{kind}</p>
+              <h3>
+                <a href={url} target="_blank" rel="noopener noreferrer">{title} <ArrowUpRight size={18} /></a>
+              </h3>
+              <p>{summary}</p>
+              <p className="project-did">{did}</p>
+              <ul className="tags">
+                {tech.map((t) => <li key={t}>{t}</li>)}
+              </ul>
             </div>
-            <h2 className="section-heading gt-1">Transformative Projects</h2>
-            <p className="section-sub">Pushing boundaries and creating impact through innovative technology.</p>
-          </motion.div>
+          </article>
+        ))}
+      </div>
 
-          {/* Alternating featured projects */}
-          <div className="featured-projects">
-            {FEATURED.map((p, i) => (
-              <motion.div key={p.title}
-                className={`feat-proj${i % 2 === 1 ? " feat-proj-reverse" : ""}`}
-                initial={{ opacity:0,y:80 }}
-                whileInView={{ opacity:1,y:0 }}
-                transition={{ duration:0.8,delay:0.15 }}
-                viewport={{ once:true, amount:0.1 }}>
-
-                {/* Image side */}
-                <motion.div className="feat-proj-img-wrap"
-                  whileHover={{ scale:1.02 }} transition={{ duration:0.3 }}>
-                  <motion.div className="feat-proj-corner"
-                    style={{ background:p.gradient }}
-                    animate={{ scale:[1,1.2,1],opacity:[.5,.8,.5] }}
-                    transition={{ duration:3,repeat:Infinity,ease:"easeInOut" }} />
-                  <div className="feat-proj-img-inner">
-                    <motion.img src={p.img} alt={p.title}
-                      whileHover={{ scale:1.08 }} transition={{ duration:0.6 }} />
-                    <div className="feat-proj-img-overlay" style={{ background:`linear-gradient(to top,${p.gradient})` }} />
-                    <div className="feat-proj-tech">
-                      {p.tech.map((t,j) => (
-                        <motion.div key={t} className="feat-proj-tech-badge"
-                          initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }}
-                          transition={{ delay:j*.1 }} viewport={{ once:true }}>
-                          {t}
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Content side */}
-                <motion.div className="feat-proj-content-col"
-                  initial={{ opacity:0, x: i%2===0 ? -40 : 40 }}
-                  whileInView={{ opacity:1, x:0 }}
-                  transition={{ duration:0.8,delay:0.25 }}
-                  viewport={{ once:true, amount:0.1 }}>
-                  <div className="feat-proj-cat-badge" style={{ background:p.gradient }}>{p.category}</div>
-                  <h3 className="feat-proj-title">{p.title}</h3>
-                  <p className="feat-proj-desc">{p.desc}</p>
-                  <div className="feat-proj-btns">
-                    <motion.a href={p.url} target="_blank" rel="noopener noreferrer"
-                      whileHover={{ scale:1.05,y:-2 }} whileTap={{ scale:.97 }}
-                      style={{ background:p.gradient,boxShadow:`0 0 20px ${p.glow}40`,padding:"12px 28px",fontSize:14,fontWeight:700,borderRadius:100,color:"#fff",display:"inline-flex",alignItems:"center",gap:8,textDecoration:"none" }}>
-                      <ExternalLink style={{ width:16,height:16 }} />
-                      View Project
-                    </motion.a>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* More projects grid */}
-          <motion.h3 className="more-projects-title gt-3"
-            initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.8 }} viewport={{ once:true }}>
-            More Projects
-          </motion.h3>
-
-          <div className="more-projects-grid">
-            {MORE.map((p, i) => (
-              <motion.a key={p.title} href={p.url} target="_blank" rel="noopener noreferrer"
-                className="mini-proj-card"
-                initial={{ opacity:0,y:40 }}
-                whileInView={{ opacity:1,y:0 }}
-                transition={{ duration:0.6,delay:i*.08 }}
-                viewport={{ once:true }}
-                whileHover={{ y:-6 }}>
-                <div className="mini-proj-img">
-                  <img src={p.img} alt={p.title} />
-                  <div className="mini-proj-overlay" />
-                </div>
-                <div className="mini-proj-body">
-                  <span style={{ fontSize:11,fontWeight:700,letterSpacing:1,textTransform:"uppercase",color:"var(--cyan)",marginBottom:8,display:"block" }}>{p.cat}</span>
-                  <h4>{p.title}</h4>
-                  <p>{p.desc}</p>
-                  <span className="mini-proj-link">View Project <ExternalLink style={{ width:12,height:12 }} /></span>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </Container>
-      </motion.div>
-    </section>
-  );
-};
+      <h3 className="subhead">More work</h3>
+      <ul className="more-work">
+        {MORE_WORK.map(({ title, desc, url }) => (
+          <li key={title}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <span className="more-title">{title} <ArrowUpRight size={14} /></span>
+              <span className="more-desc">{desc}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+);

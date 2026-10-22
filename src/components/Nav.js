@@ -2,11 +2,10 @@ import { useState } from "react";
 import { LINKS } from "../data";
 
 const ITEMS = [
+  { href: "#services", label: "Services" },
+  { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: LINKS.resume, label: "Resume", external: true },
 ];
 
 export const Nav = () => {
@@ -15,15 +14,16 @@ export const Nav = () => {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="nav-brand">Muaz Shoukat</a>
+        <a href="#top" className="nav-brand"><span className="brand-mark">MS</span> Muaz Shoukat</a>
         <button className="nav-toggle" aria-expanded={open} aria-controls="nav-menu" onClick={() => setOpen(!open)}>
           Menu
         </button>
         <nav id="nav-menu" className={`nav-links${open ? " open" : ""}`}>
-          {ITEMS.map(({ href, label }) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+          {ITEMS.map(({ href, label, external }) => (
+            <a key={label} href={href} onClick={() => setOpen(false)}
+               {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{label}</a>
           ))}
-          <a href={LINKS.resume} className="btn btn-small" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="#contact" className="btn btn-small" onClick={() => setOpen(false)}>Let's talk</a>
         </nav>
       </div>
     </header>

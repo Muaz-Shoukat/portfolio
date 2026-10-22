@@ -2,8 +2,9 @@ import { ArrowUpRight } from "lucide-react";
 import { PROJECTS, MORE_WORK } from "../data";
 
 export const Projects = () => (
-  <section className="section" id="projects">
+  <section className="section" id="work">
     <div className="container">
+      <p className="eyebrow">Work</p>
       <h2 className="section-title">Selected projects</h2>
 
       <div className="projects">

@@ -1,14 +1,13 @@
 import "./App.css";
 
-import { Nav }         from "./components/Nav";
-import { Hero }        from "./components/Hero";
-import { About }       from "./components/About";
-import { Experience }  from "./components/Experience";
-import { Projects }    from "./components/Projects";
-import { Testimonial } from "./components/Testimonial";
-import { Skills }      from "./components/Skills";
-import { Contact }     from "./components/Contact";
-import { Footer }      from "./components/Footer";
+import { Nav }          from "./components/Nav";
+import { Hero }         from "./components/Hero";
+import { Services }     from "./components/Services";
+import { Projects }     from "./components/Projects";
+import { Testimonials } from "./components/Testimonials";
+import { About }        from "./components/About";
+import { Contact }      from "./components/Contact";
+import { Footer }       from "./components/Footer";
 
 function App() {
   return (
@@ -17,11 +16,10 @@ function App() {
       <Nav />
       <main id="main">
         <Hero />
-        <About />
-        <Experience />
+        <Services />
         <Projects />
-        <Testimonial />
-        <Skills />
+        <Testimonials />
+        <About />
         <Contact />
       </main>
       <Footer />

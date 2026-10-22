@@ -1,34 +1,36 @@
-const FOCUS = [
-  { title: "AI & LLM engineering", text: "LLM features with OpenAI and Claude, RAG search and chatbots, and agents that use real tools through MCP." },
-  { title: "Python backends", text: "FastAPI, Flask and Django services, REST and GraphQL APIs, billing and orchestration on AWS." },
-  { title: "Identity & wallets", text: "Passkeys and FIDO, biometric login, and Apple Wallet and Google Wallet credentials." },
-  { title: "Full stack", text: "React, Next.js and TypeScript front ends, from admin dashboards to streaming apps." },
-];
+import { STEPS } from "../data";
 
 export const About = () => (
   <section className="section" id="about">
     <div className="container about-grid">
       <div>
-        <h2 className="section-title">About</h2>
+        <p className="eyebrow">About</p>
+        <h2 className="section-title">Hi, I'm Muaz.</h2>
         <p>
-          I'm a software engineer in Lahore, Pakistan, working remotely with Passivebolt on KeyShare,
-          an NFC identity platform that puts hotel room keys, building passes and digital IDs into a
-          phone's native wallet.
+          I'm a full-stack AI engineer based in Lahore, Pakistan, working remotely with international
+          teams. Over nearly four years I've built digital identity and wallet credentials,
+          energy and IoT integrations, AI prospecting tools and streaming apps.
         </p>
         <p>
-          Before that I worked on OhmConnect at Codefulcrum and shipped projects for clients on Upwork,
-          where I'm Top Rated with a 100% Job Success Score. I like owning features end to end, writing
-          clear updates, and working with distributed teams.
+          I enjoy owning a feature from the first sketch to production, and I'm happiest on small,
+          fast teams where clear writing and quick feedback matter as much as the code.
         </p>
       </div>
-      <ul className="focus-list">
-        {FOCUS.map(({ title, text }) => (
-          <li key={title}>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </li>
-        ))}
-      </ul>
+
+      <div>
+        <h3 className="process-title">How I work</h3>
+        <ol className="steps">
+          {STEPS.map(({ title, text }, i) => (
+            <li key={title}>
+              <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   </section>
 );
